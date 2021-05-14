@@ -24,7 +24,7 @@ weatherForm.addEventListener('submit',(e)=>{
             if(data.error)
             {
                // console.log(data.error.info)
-                m1.textContent=data.error.info
+                m1.textContent="Try a different city"
             }
             else
             {
