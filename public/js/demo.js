@@ -18,7 +18,8 @@ weatherForm.addEventListener('submit',(e)=>{
     m2.textContent=''
     m3.textContent=''
     m4.textContent=''
-    fetch('http://api.weatherstack.com/current?access_key=973bd6978203587589e9722d1583ddec&query='+city)
+    const someurl='http://api.weatherstack.com/current?access_key=973bd6978203587589e9722d1583ddec&query='
+    fetch('/weather?address='+city)
     .then((response)=>{
             response.json().then((data)=>{
             if(data.error)
@@ -32,10 +33,10 @@ weatherForm.addEventListener('submit',(e)=>{
                 // console.log('The weather description is '+data.current.weather_descriptions[0])
                 // console.log('It is currently '+data.current.temperature+'°C with '+data.current.humidity+'% humidity')
                 // console.log('It feels like '+data.current.feelslike+'°C')
-                m1.textContent='You requested for the weather of '+data.location.name+' in the region of '+data.location.region
-                m2.textContent='The weather description is '+data.current.weather_descriptions[0]
-                m3.textContent='It is currently '+data.current.temperature+'°C with '+data.current.humidity+'% humidity'
-                m4.textContent='It feels like '+data.current.feelslike+'°C'
+                m1.textContent='You requested for the weather of '+data.city+' in the region of '+data.region
+                m2.textContent='The weather description is '+data.weather_description
+                m3.textContent='It is currently '+data.temperature+' with '+data.humidity+' humidity'
+                m4.textContent='It feels like '+data.feelslike
             }
     })
 })
