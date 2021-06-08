@@ -92,3 +92,12 @@ input:focus{
     background-color:  rgb(0, 225, 255);
     border-radius: 8px;
 }
+
+.help a{
+    color: #999999;
+    text-decoration: none;
+}
+
+.help a:hover{
+    color: rgb(0, 225, 255);
+}
